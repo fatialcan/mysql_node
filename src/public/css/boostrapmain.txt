@@ -1,0 +1,3 @@
+se descarga de la pagina de boostrap 
+es css pero lo pongo como txt para descargarlo despues.
+hay dos formas poner la ruta que jale los estilos desde la pagina de boostrap (se pone la url) o desde mis propios estilos css (si yo quiero personalizarlos)

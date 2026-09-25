@@ -1,0 +1,1 @@
+es un archivo js que se descarga desde la pagina de boostrap pero lo pongo como txt para descargarlo despues. 
