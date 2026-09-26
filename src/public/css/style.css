@@ -1,0 +1,121 @@
+/* ===== Paleta de colores ===== */
+:root {
+  --color-crema: #FFF8E7;
+  --color-amarillo: #FFD97D;
+  --color-amarillo-claro: #FFE9B3;
+  --color-cafe: #A67C52;
+  --color-cafe-oscuro: #7C5C3E;
+  --color-rosa: #FFD6E8;
+}
+
+body {
+  background-color: var(--color-crema);
+}
+
+/* ===== Sidebar (index, usuarios, editar, agregar) ===== */
+.sidebar {
+  background: linear-gradient(180deg, var(--color-cafe), var(--color-cafe-oscuro));
+  min-height: 100vh;
+  width: 220px;
+}
+.sidebar a {
+  color: var(--color-amarillo-claro);
+  text-decoration: none;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  margin: 2px 10px;
+}
+.sidebar a.active, .sidebar a:hover {
+  background-color: var(--color-amarillo);
+  color: var(--color-cafe-oscuro);
+  font-weight: 600;
+}
+
+/* ===== Tarjetas y navbar del panel ===== */
+.card, .card-stat {
+  border: none;
+  border-radius: 16px;
+  background-color: #FFFDF6;
+}
+.navbar {
+  background-color: var(--color-amarillo-claro) !important;
+}
+.avatar {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--color-cafe); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px;
+}
+
+/* ===== Botones  ===== */
+.btn-primary {
+  background-color: var(--color-amarillo);
+  border-color: var(--color-amarillo);
+  color: var(--color-cafe-oscuro);
+  font-weight: 600;
+}
+.btn-primary:hover {
+  background-color: #FFC55C;
+  border-color: #FFC55C;
+  color: #5A3E28;
+}
+.btn-success {
+  background-color: #C8F4DE;
+  border-color: #C8F4DE;
+  color: #2F6B4F;
+  font-weight: 600;
+}
+.btn-success:hover {
+  background-color: #A8E8C6;
+  border-color: #A8E8C6;
+}
+.btn-outline-primary {
+  color: var(--color-cafe);
+  border-color: var(--color-cafe);
+}
+.btn-outline-primary:hover {
+  background-color: var(--color-cafe);
+  border-color: var(--color-cafe);
+  color: #fff;
+}
+.btn-outline-danger {
+  color: #E38C9E;
+  border-color: #E38C9E;
+}
+.btn-outline-danger:hover {
+  background-color: #E38C9E;
+  border-color: #E38C9E;
+  color: #fff;
+}
+.btn-outline-secondary {
+  color: var(--color-cafe);
+  border-color: #C9A876;
+}
+.btn-outline-secondary:hover {
+  background-color: #C9A876;
+  border-color: #C9A876;
+  color: #fff;
+}
+
+/* ===== Login / Registro ===== */
+.auth-body {
+  background: linear-gradient(135deg, var(--color-crema), var(--color-amarillo-claro));
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+.auth-card {
+  background-color: #FFFDF6;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(166, 124, 82, 0.15);
+}
+.auth-body a {
+  color: var(--color-cafe);
+}
+.auth-body a:hover {
+  color: var(--color-cafe-oscuro);
+}
