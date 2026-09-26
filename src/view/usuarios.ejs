@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Usuarios</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <style>
+    body { background-color: #f5f6fa; }
+    .sidebar { background-color: #0a1f44; min-height: 100vh; width: 220px; }
+    .sidebar a {
+      color: #c6ccdb; text-decoration: none; padding: 10px 20px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .sidebar a.active, .sidebar a:hover { background-color: #16336e; color: #fff; }
+  </style>
+</head>
+<body>
+  <div class="d-flex">
+    <div class="sidebar py-3">
+      <div class="px-3 mb-4 text-white fw-bold fs-5"><i class="bi bi-hexagon-fill"></i> MiApp</div>
+      <a href="/"><i class="bi bi-grid-1x2-fill"></i> Dashboard</a>
+      <a href="#"><i class="bi bi-pencil-square"></i> Form</a>
+      <a href="#"><i class="bi bi-list-ul"></i> List</a>
+      <a href="/usuarios" class="active"><i class="bi bi-people-fill"></i> Usuarios</a>
+      <a href="#"><i class="bi bi-exclamation-triangle"></i> Excepciones</a>
+      <a href="/logout"><i class="bi bi-box-arrow-right"></i> Cerrar sesión</a>
+    </div>
+
+    <div class="flex-grow-1">
+      <nav class="navbar navbar-light bg-white border-bottom px-4 py-2">
+        <span class="navbar-text fw-semibold">Usuarios registrados</span>
+        <span><%= nombre %></span>
+      </nav>
+
+      <div class="container-fluid p-4">
+        <div class="card shadow-sm p-4">
+            <div class="d-flex justify-content-end mb-3">
+         <a href="/usuarios/agregar" class="btn btn-success">
+            <i class="bi bi-plus-lg"></i> Agregar usuario
+         </a>
+        </div>
+          <table class="table table-hover align-middle">
+            <thead>
+              <tr>
+                <th>ID</th><th>Nombre</th><th>Email</th><th>Registrado</th><th class="text-end">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% usuarios.forEach(u => { %>
+                <tr>
+                  <td><%= u.id %></td>
+                  <td><%= u.name %></td>
+                  <td><%= u.email %></td>
+                  <td><%= new Date(u.created_at).toLocaleDateString('es-MX') %></td>
+                  <td class="text-end">
+                    <a href="/usuarios/editar/<%= u.id %>" class="btn btn-sm btn-outline-primary">Editar</a>
+                    <form action="/usuarios/eliminar/<%= u.id %>" method="POST" class="d-inline"
+                          onsubmit="return confirm('¿Seguro que quieres eliminar a <%= u.name %>?')">
+                      <button type="submit" class="btn btn-sm btn-outline-danger">Eliminar</button>
+                    </form>
+                  </td>
+                </tr>
+              <% }) %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
