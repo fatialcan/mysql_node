@@ -12,7 +12,7 @@
        <div class="sidebar py-3">
       <div class="px-3 mb-4 fw-bold fs-5 d-flex align-items-center gap-2" style="color: #FFE9B3;">
   <img src="/img/pompom.png" alt="Pompompurin" style="width: 32px; height: 32px; object-fit: contain;">
-       MiApp
+        PompomStore
       </div>
       <a href="/"><i class="bi bi-grid-1x2-fill"></i> Dashboard</a>
       <a href="#"><i class="bi bi-pencil-square"></i> Form</a>
@@ -22,10 +22,18 @@
       <a href="/logout"><i class="bi bi-box-arrow-right"></i> Cerrar sesión</a>
     </div>
 
+        <!-- Contenido -->
     <div class="flex-grow-1">
+      <!-- Navbar superior -->
       <nav class="navbar navbar-light bg-white border-bottom px-4 py-2">
         <span class="navbar-text fw-semibold">Usuarios registrados</span>
-        <span><%= nombre %></span>
+        <div class="d-flex align-items-center gap-3">
+          <i class="bi bi-search"></i>
+          <i class="bi bi-question-circle"></i>
+          <i class="bi bi-bell"></i>
+          <div class="avatar"><%= typeof nombre !== 'undefined' ? nombre.charAt(0).toUpperCase() : 'U' %></div>
+          <span><%= typeof nombre !== 'undefined' ? nombre : 'Usuario' %></span>
+        </div>
       </nav>
 
       <div class="container-fluid p-4">
